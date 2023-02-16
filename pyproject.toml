@@ -6,6 +6,9 @@ authors = ["Andrey Bogatyrev <t2way@yandex.ru>"]
 readme = "README.md"
 packages = [{include = "gendiff"}]
 
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 
