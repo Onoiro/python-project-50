@@ -10,8 +10,9 @@ def generate_diff(data1, data2):
         else:
             result.append(f'- {key_data1}: {value_data1}')
     for key_data2, value_data2 in data2.items():
-        if key_data2 not in data1:
+        if key_data2 not in data1: 
             result.append(f'+ {key_data2}: {value_data2}')
+    result = sorted(result, key=lambda i: i[2])
     return '{\n  ' + '\n  '.join(result) + '\n}'
 
 
