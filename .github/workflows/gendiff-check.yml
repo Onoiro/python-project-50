@@ -22,8 +22,10 @@ jobs:
           pip install poetry
           poetry install
           pip install flake8 pytest
-      - name: Lint with flake8 and test with Pytest
+      - name: Lint with flake8
         run: |
           make lint
         continue-on-error: true
+      - name: test with Pytest
+        run: |
           make test
