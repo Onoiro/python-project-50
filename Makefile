@@ -14,7 +14,7 @@ lint:
 	poetry run flake8 gendiff
 
 test:
-	poetry run pytest
+	poetry run pytest --cov
 
 package-install:
 	python3 -m pip install --force-reinstall --user dist/*.whl
