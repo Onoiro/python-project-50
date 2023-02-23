@@ -1,14 +1,14 @@
 from gendiff.gendiff import generate_diff
 import json
 
-'''with open('tests/fixtures/file1.json') as f:
+with open('tests/fixtures/file1.json') as f:
     data1 = json.load(f)
 with open('tests/fixtures/file2.json') as f:
     data2 = json.load(f)
 with open('tests/fixtures/result.txt') as f:
-    right_result = f.read()'''
+    right_result = f.read()
 
-data1 = {
+'''data1 = {
     "host": "hexlet.io",
     "timeout": 50,
     "proxy": "123.234.53.22",
@@ -27,7 +27,7 @@ right_result = (
         '\n  + timeout: 20'
         '\n  + verbose: True'
         '\n}'
-  )
+  )'''
 
 
 def test_generate_diff():
