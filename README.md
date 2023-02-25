@@ -7,5 +7,8 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/705776fbe38db666259d/test_coverage)](https://codeclimate.com/github/Onoiro/python-project-50/test_coverage)
 
-### Show how to use help and compare two files
+### Show how to use help and compare two .json files
 [![asciicast](https://asciinema.org/a/qQZAaGhHVzzE5uvDKZ1TSmLIZ.svg)](https://asciinema.org/a/qQZAaGhHVzzE5uvDKZ1TSmLIZ)
+
+### Show how to compare two .yml files
+[![asciicast](https://asciinema.org/a/jtOaVgxZ9jG6N50qsdZFJ2LAc.svg)](https://asciinema.org/a/jtOaVgxZ9jG6N50qsdZFJ2LAc)
