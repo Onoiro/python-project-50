@@ -4,7 +4,7 @@ import argparse
 import json
 import yaml
 from yaml.loader import SafeLoader
-from gendiff.format_diff import format_diff
+from gendiff.stylish import format_diff
 from gendiff.gendiff import generate_diff
 
 
