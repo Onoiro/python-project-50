@@ -24,6 +24,10 @@ with open('tests/fixtures/filepath4.yml') as f:
     yaml_data_4 = yaml.load(f, Loader=SafeLoader)
 with open('tests/fixtures/expected_result_2.txt') as f:
     expected_result_2 = f.read()
+'''with open('fixtures/file3.json') as f:
+    json_data_3 = json.load(f)
+with open('fixtures/file4.json') as f:
+    json_data_4 = json.load(f)'''
 
 
 def test_generate_diff():
@@ -35,3 +39,6 @@ def test_generate_diff():
     assert format_diff(diff_list_yaml_1) == expected_result_1
     assert format_diff(diff_list_json_2) == expected_result_2
     assert format_diff(diff_list_yaml_2) == expected_result_2
+
+'''diff_list = generate_diff(json_data_3, json_data_4)
+print(format_diff(diff_list))'''
