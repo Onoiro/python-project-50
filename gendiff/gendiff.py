@@ -1,37 +1,28 @@
-import json
-
-def generate_diff(data1, data2):
-    result = []
-    for key_data1, value_data1 in data1.items():
-        if key_data1 in data2:
-            if data2[key_data1] == value_data1:
-                result.append(f'  {key_data1}: {value_data1}')
-            else:
-                result.append(f'- {key_data1}: {value_data1}')
-                result.append(f'+ {key_data1}: {data2[key_data1]}')
+def generate_diff(data1, data2, level=1):
+    diffs = []
+    keys = sorted(data1.keys() | data2.keys())
+    for key in keys:
+        node = {'name': key}
+        if key not in data1:
+            node['status'] = 'added'
+            node['data'] = data2[key]
+            node['level'] = level
+        elif key not in data2:
+            node['status'] = 'removed'
+            node['data'] = data1[key]
+            node['level'] = level
+        elif type(data1[key]) is dict and type(data2[key]) is dict:
+            node['status'] = 'nested'
+            node['children'] = generate_diff(data1[key], data2[key], level + 1)
+            node['level'] = level
+        elif data1[key] == data2[key]:
+            node['status'] = 'not updated'
+            node['data'] = data1[key]
+            node['level'] = level
         else:
-            result.append(f'- {key_data1}: {value_data1}')
-    for key_data2, value_data2 in data2.items():
-        if key_data2 not in data1:
-            result.append(f'+ {key_data2}: {value_data2}')
-    result = sorted(result, key=lambda i: i[2])
-    return '{\n  ' + '\n  '.join(result) + '\n}'
-
-
-with open('file3.json') as f:
-    data1 = json.load(f)
-with open('file4.json') as f:
-    data2 = json.load(f)
-print(generate_diff(data1, data2))
-
-'''print(generate_diff({
-    "host": "hexlet.io",
-    "timeout": 50,
-    "proxy": "123.234.53.22",
-    "follow": False
-  },
-  {
-    "timeout": 20,
-    "verbose": True,
-    "host": "hexlet.io"
-  }))'''
+            node['status'] = 'updated'
+            node['old data'] = data1[key]
+            node['new data'] = data2[key]
+            node['level'] = level
+        diffs.append(node)
+    return diffs

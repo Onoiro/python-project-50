@@ -4,6 +4,7 @@ import argparse
 import json
 import yaml
 from yaml.loader import SafeLoader
+from gendiff.format_diff import format_diff
 from gendiff.gendiff import generate_diff
 
 
@@ -22,7 +23,8 @@ def main():
             arg1 = yaml.load(f, Loader=SafeLoader)
         with open(args.second_file) as f:
             arg2 = yaml.load(f, Loader=SafeLoader)
-    print(generate_diff(arg1, arg2))
+    diff_list = generate_diff(arg1, arg2)
+    print(format_diff(diff_list))
 
 
 if __name__ == '__main__':
