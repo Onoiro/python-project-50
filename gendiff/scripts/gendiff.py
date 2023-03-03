@@ -13,7 +13,8 @@ def main():
         description='Compares two configuration files and shows a difference.')
     parser.add_argument('first_file')
     parser.add_argument('second_file')
-    parser.add_argument('-f', '--format', help='set format of output')
+    parser.add_argument('-f', '--format', default='stylish',
+                         help='set format of output')
     args = parser.parse_args()
     if args.first_file[-4:] == 'json' and args.second_file[-4:] == 'json':
         arg1 = json.load(open(args.first_file))
@@ -24,7 +25,8 @@ def main():
         with open(args.second_file) as f:
             arg2 = yaml.load(f, Loader=SafeLoader)
     diff_list = generate_diff(arg1, arg2)
-    print(format_diff(diff_list))
+    if args.format == "stylish":
+        print(format_diff(diff_list))
 
 
 if __name__ == '__main__':
