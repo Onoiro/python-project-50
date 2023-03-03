@@ -14,7 +14,7 @@ def main():
     parser.add_argument('first_file')
     parser.add_argument('second_file')
     parser.add_argument('-f', '--format', default='stylish',
-                         help='set format of output')
+                        help='set format of output')
     args = parser.parse_args()
     if args.first_file[-4:] == 'json' and args.second_file[-4:] == 'json':
         arg1 = json.load(open(args.first_file))
