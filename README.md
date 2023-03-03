@@ -12,3 +12,6 @@
 
 ### Show how to compare two .yml files
 [![asciicast](https://asciinema.org/a/jtOaVgxZ9jG6N50qsdZFJ2LAc.svg)](https://asciinema.org/a/jtOaVgxZ9jG6N50qsdZFJ2LAc)
+
+### Show how to compare two files with nested structures
+[![asciicast](https://asciinema.org/a/JeLnWtVi1dXjhM22CnTJ2PUFA.svg)](https://asciinema.org/a/JeLnWtVi1dXjhM22CnTJ2PUFA)
