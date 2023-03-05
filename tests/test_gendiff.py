@@ -1,5 +1,5 @@
 from gendiff.gendiff import generate_diff
-from gendiff.stylish import format_diff
+from gendiff.formatters.stylish import get_stylish
 import json
 import yaml
 from yaml.loader import SafeLoader
@@ -35,10 +35,10 @@ def test_generate_diff():
     diff_list_yaml_1 = generate_diff(yaml_data_1, yaml_data_2)
     diff_list_json_2 = generate_diff(json_data_3, json_data_4)
     diff_list_yaml_2 = generate_diff(yaml_data_3, yaml_data_4)
-    assert format_diff(diff_list_json_1) == expected_result_1
-    assert format_diff(diff_list_yaml_1) == expected_result_1
-    assert format_diff(diff_list_json_2) == expected_result_2
-    assert format_diff(diff_list_yaml_2) == expected_result_2
+    assert get_stylish(diff_list_json_1) == expected_result_1
+    assert get_stylish(diff_list_yaml_1) == expected_result_1
+    assert get_stylish(diff_list_json_2) == expected_result_2
+    assert get_stylish(diff_list_yaml_2) == expected_result_2
 
 '''diff_list = generate_diff(json_data_3, json_data_4)
 print(format_diff(diff_list))'''

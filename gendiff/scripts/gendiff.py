@@ -4,7 +4,7 @@ import argparse
 import json
 import yaml
 from yaml.loader import SafeLoader
-from gendiff.stylish import format_diff
+from gendiff.formatters.stylish import get_stylish
 from gendiff.gendiff import generate_diff
 
 
@@ -26,7 +26,7 @@ def main():
             arg2 = yaml.load(f, Loader=SafeLoader)
     diff_list = generate_diff(arg1, arg2)
     if args.format == "stylish":
-        print(format_diff(diff_list))
+        print(get_stylish(diff_list))
 
 
 if __name__ == '__main__':

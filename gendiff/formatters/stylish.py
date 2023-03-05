@@ -1,11 +1,11 @@
-def format_diff(diff_list, level=0):
+def get_stylish(diff_list, level=0):
     formatted_diff = '{\n'
     indent = '  '
     indent += '    ' * level
     for node in diff_list:
         if node['status'] == 'nested':
             level = node['level']
-            data = format_diff(node['children'], level)
+            data = get_stylish(node['children'], level)
             formatted_diff += f"{indent}  {node['name']}: {data}\n"
         if node['status'] == 'not updated':
             data = format_data(node['data'], indent)
