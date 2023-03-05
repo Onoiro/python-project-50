@@ -1,5 +1,6 @@
 from gendiff.gendiff import generate_diff
 from gendiff.formatters.stylish import get_stylish
+from gendiff.formatters.plain import get_plain
 import json
 import yaml
 from yaml.loader import SafeLoader
@@ -12,8 +13,6 @@ with open('tests/fixtures/filepath1.yml') as f:
     yaml_data_1 = yaml.load(f, Loader=SafeLoader)
 with open('tests/fixtures/filepath2.yml') as f:
     yaml_data_2 = yaml.load(f, Loader=SafeLoader)
-with open('tests/fixtures/expected_result_1.txt') as f:
-    expected_result_1 = f.read()
 with open('tests/fixtures/file3.json') as f:
     json_data_3 = json.load(f)
 with open('tests/fixtures/file4.json') as f:
@@ -22,8 +21,12 @@ with open('tests/fixtures/filepath3.yml') as f:
     yaml_data_3 = yaml.load(f, Loader=SafeLoader)
 with open('tests/fixtures/filepath4.yml') as f:
     yaml_data_4 = yaml.load(f, Loader=SafeLoader)
+with open('tests/fixtures/expected_result_1.txt') as f:
+    expected_result_1 = f.read()
 with open('tests/fixtures/expected_result_2.txt') as f:
     expected_result_2 = f.read()
+with open('tests/fixtures/expected_plain.txt') as f:
+    expected_result_3 = f.read()
 '''with open('fixtures/file3.json') as f:
     json_data_3 = json.load(f)
 with open('fixtures/file4.json') as f:
@@ -39,6 +42,10 @@ def test_generate_diff():
     assert get_stylish(diff_list_yaml_1) == expected_result_1
     assert get_stylish(diff_list_json_2) == expected_result_2
     assert get_stylish(diff_list_yaml_2) == expected_result_2
+    #assert get_plain(diff_list_json_1) == expected_result_3
+    #assert get_plain(diff_list_yaml_1) == expected_result_3
+    assert get_plain(diff_list_json_2) == expected_result_3
+    assert get_plain(diff_list_yaml_2) == expected_result_3
 
 '''diff_list = generate_diff(json_data_3, json_data_4)
 print(format_diff(diff_list))'''
