@@ -6,6 +6,7 @@ import yaml
 from yaml.loader import SafeLoader
 from gendiff.formatters.stylish import get_stylish
 from gendiff.formatters.plain import get_plain
+from gendiff.formatters.json import get_json_format
 from gendiff.gendiff import generate_diff
 
 
@@ -30,6 +31,8 @@ def main():
         print(get_stylish(diff_list))
     if args.format == "plain":
         print(get_plain(diff_list))
+    if args.format == "json":
+        print(get_json_format(diff_list))
 
 
 if __name__ == '__main__':

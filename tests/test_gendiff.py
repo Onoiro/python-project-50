@@ -5,6 +5,7 @@ import json
 import yaml
 from yaml.loader import SafeLoader
 
+
 with open('tests/fixtures/file1.json') as f:
     json_data_1 = json.load(f)
 with open('tests/fixtures/file2.json') as f:
@@ -25,12 +26,10 @@ with open('tests/fixtures/expected_result_1.txt') as f:
     expected_result_1 = f.read()
 with open('tests/fixtures/expected_result_2.txt') as f:
     expected_result_2 = f.read()
+with open('tests/fixtures/expected_plain_1.txt') as f:
+    expected_plain_result_1 = f.read()
 with open('tests/fixtures/expected_plain.txt') as f:
-    expected_result_3 = f.read()
-'''with open('fixtures/file3.json') as f:
-    json_data_3 = json.load(f)
-with open('fixtures/file4.json') as f:
-    json_data_4 = json.load(f)'''
+    expected_plain_result_2 = f.read()
 
 
 def test_generate_diff():
@@ -42,10 +41,7 @@ def test_generate_diff():
     assert get_stylish(diff_list_yaml_1) == expected_result_1
     assert get_stylish(diff_list_json_2) == expected_result_2
     assert get_stylish(diff_list_yaml_2) == expected_result_2
-    #assert get_plain(diff_list_json_1) == expected_result_3
-    #assert get_plain(diff_list_yaml_1) == expected_result_3
-    assert get_plain(diff_list_json_2) == expected_result_3
-    assert get_plain(diff_list_yaml_2) == expected_result_3
-
-'''diff_list = generate_diff(json_data_3, json_data_4)
-print(format_diff(diff_list))'''
+    assert get_plain(diff_list_json_1) == expected_plain_result_1
+    assert get_plain(diff_list_yaml_1) == expected_plain_result_1
+    assert get_plain(diff_list_json_2) == expected_plain_result_2
+    assert get_plain(diff_list_yaml_2) == expected_plain_result_2
