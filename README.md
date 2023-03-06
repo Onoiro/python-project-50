@@ -18,3 +18,6 @@
 
 ### How to compare two files use plain format
 [![asciicast](https://asciinema.org/a/gtfc81MH8J6Y71ubpCY9sOWhl.svg)](https://asciinema.org/a/gtfc81MH8J6Y71ubpCY9sOWhl)
+
+### How to compare two files use json format
+[![asciicast](https://asciinema.org/a/eevZlZcSA6gsHljEXHCe8Vrp6.svg)](https://asciinema.org/a/eevZlZcSA6gsHljEXHCe8Vrp6)
