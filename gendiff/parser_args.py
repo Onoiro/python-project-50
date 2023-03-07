@@ -1,5 +1,8 @@
 import argparse
 import json
+import yaml
+from yaml.loader import SafeLoader
+
 
 def get_parsed_data():
     parser = argparse.ArgumentParser(

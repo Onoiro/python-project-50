@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 
-import argparse
-import json
-import yaml
-from yaml.loader import SafeLoader
 from gendiff.formatters.stylish import get_stylish
 from gendiff.formatters.plain import get_plain
 from gendiff.formatters.json import get_json_format
