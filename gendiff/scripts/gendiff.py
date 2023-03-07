@@ -13,7 +13,7 @@ from gendiff.parser_args import get_parsed_data
 
 def main():
     data1, data2, format_type = get_parsed_data()
-    diff_list = generate_diff(arg1, arg2)
+    diff_list = generate_diff(data1, data2)
     if format_type == "stylish":
         print(get_stylish(diff_list))
     if format_type == "plain":
