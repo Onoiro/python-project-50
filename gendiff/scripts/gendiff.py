@@ -8,7 +8,7 @@ from gendiff.formatters.stylish import get_stylish
 from gendiff.formatters.plain import get_plain
 from gendiff.formatters.json import get_json_format
 from gendiff.gendiff import generate_diff
-from gendiff.gendiff import get_parsed_data
+from gendiff.parser_args import get_parsed_data
 
 
 def main():
