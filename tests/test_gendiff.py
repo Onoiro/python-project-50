@@ -1,4 +1,4 @@
-from gendiff.gendiff import generate_diff
+from gendiff.get_diff import get_diffs
 from gendiff.formatters.stylish import get_stylish
 from gendiff.formatters.plain import get_plain
 import json
@@ -32,11 +32,11 @@ with open('tests/fixtures/expected_plain.txt') as f:
     expected_plain_result_2 = f.read()
 
 
-def test_generate_diff():
-    diff_list_json_1 = generate_diff(json_data_1, json_data_2)
-    diff_list_yaml_1 = generate_diff(yaml_data_1, yaml_data_2)
-    diff_list_json_2 = generate_diff(json_data_3, json_data_4)
-    diff_list_yaml_2 = generate_diff(yaml_data_3, yaml_data_4)
+def test_get_diffs():
+    diff_list_json_1 = get_diffs(json_data_1, json_data_2)
+    diff_list_yaml_1 = get_diffs(yaml_data_1, yaml_data_2)
+    diff_list_json_2 = get_diffs(json_data_3, json_data_4)
+    diff_list_yaml_2 = get_diffs(yaml_data_3, yaml_data_4)
     assert get_stylish(diff_list_json_1) == expected_result_1
     assert get_stylish(diff_list_yaml_1) == expected_result_1
     assert get_stylish(diff_list_json_2) == expected_result_2
