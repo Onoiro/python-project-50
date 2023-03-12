@@ -7,6 +7,30 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/705776fbe38db666259d/test_coverage)](https://codeclimate.com/github/Onoiro/python-project-50/test_coverage)
 
+##### Welcome to "Detection of Differences"
+This CLI utility allows you to determine the differences of two *.json or *.yaml files.
+Such system is used, for example, when outputting tests or when automatically tracking changes in configuration files.
+
+Minimal system requirements:
+
+    Linux or MacOS command line
+    Python 3.8 and up installed
+    Poetry 1.2.2 and up installed
+    Pip 22.2.1 and up installed
+
+To install Detection of Differences:
+
+    git clone git@github.com:Onoiro/python-project-50.git
+    poetry install
+    make build
+    make publish
+    make package-install
+
+To uninstall Detection of Differences:
+
+    python3 -m pip uninstall hexlet-code
+
+
 ### How how to use help and compare two *.json files
 [![asciicast](https://asciinema.org/a/qQZAaGhHVzzE5uvDKZ1TSmLIZ.svg)](https://asciinema.org/a/qQZAaGhHVzzE5uvDKZ1TSmLIZ)
 
