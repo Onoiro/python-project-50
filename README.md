@@ -31,10 +31,10 @@ To uninstall Detection of Differences:
     python3 -m pip uninstall hexlet-code
 
 
-### How how to use help and compare two *.json files
+#### How how to use help and compare two *.json files
 [![asciicast](https://asciinema.org/a/qQZAaGhHVzzE5uvDKZ1TSmLIZ.svg)](https://asciinema.org/a/qQZAaGhHVzzE5uvDKZ1TSmLIZ)
 
-### How how to compare two *.yml files
+#### How how to compare two *.yml files
 [![asciicast](https://asciinema.org/a/jtOaVgxZ9jG6N50qsdZFJ2LAc.svg)](https://asciinema.org/a/jtOaVgxZ9jG6N50qsdZFJ2LAc)
 
 #### How to compare two files with nested structures
