@@ -8,7 +8,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/705776fbe38db666259d/test_coverage)](https://codeclimate.com/github/Onoiro/python-project-50/test_coverage)
 
 ## Welcome to the "Detection of Differences"
-This CLI utility allows you to determine the differences of two *.json or *.yaml files.
+This CLI utility allows you to compare two *.json or *.yaml files and show the difference.
 Such system is used, for example, when outputting tests or when automatically tracking changes in configuration files.
 
 Minimal system requirements:
@@ -29,6 +29,18 @@ To install Detection of Differences:
 To uninstall Detection of Differences:
 
     python3 -m pip uninstall hexlet-code
+
+To run and look how to use Detection of Differences:
+
+    usage: gendiff [-h] [-f FORMAT] first_file second_file
+
+    positional arguments:
+    first_file
+    second_file
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    -f FORMAT, --format FORMAT       set format of output
 
 
 #### How how to use help and compare two *.json files
