@@ -44,8 +44,7 @@ diff_list_yaml_2 = get_diffs(yaml_data_3, yaml_data_4)
         (diff_list_yaml_1, expected_stylish_result_1),
         (diff_list_json_2, expected_stylish_result_2),
         (diff_list_yaml_2, expected_stylish_result_2)
-        ]
-        )
+])
 def test_get_stylish(test_input, expected):
     assert get_stylish(test_input) == expected
 
@@ -57,7 +56,6 @@ def test_get_stylish(test_input, expected):
         (diff_list_yaml_1, expected_plain_result_1),
         (diff_list_json_2, expected_plain_result_2),
         (diff_list_yaml_2, expected_plain_result_2)
-        ]
-        )
+])
 def test_get_plain(test_input, expected):
     assert get_plain(test_input) == expected
