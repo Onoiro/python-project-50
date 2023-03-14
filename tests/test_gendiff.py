@@ -4,6 +4,7 @@ from gendiff.formatters.plain import get_plain
 import json
 import yaml
 from yaml.loader import SafeLoader
+import pytest
 
 
 with open('tests/fixtures/file1.json') as f:
@@ -30,18 +31,27 @@ with open('tests/fixtures/expected_plain_1.txt') as f:
     expected_plain_result_1 = f.read()
 with open('tests/fixtures/expected_plain.txt') as f:
     expected_plain_result_2 = f.read()
+diff_list_json_1 = get_diffs(json_data_1, json_data_2)
+diff_list_yaml_1 = get_diffs(yaml_data_1, yaml_data_2)
+diff_list_json_2 = get_diffs(json_data_3, json_data_4)
+diff_list_yaml_2 = get_diffs(yaml_data_3, yaml_data_4)
 
 
-def test_get_diffs():
-    diff_list_json_1 = get_diffs(json_data_1, json_data_2)
-    diff_list_yaml_1 = get_diffs(yaml_data_1, yaml_data_2)
-    diff_list_json_2 = get_diffs(json_data_3, json_data_4)
-    diff_list_yaml_2 = get_diffs(yaml_data_3, yaml_data_4)
-    assert get_stylish(diff_list_json_1) == expected_result_1
-    assert get_stylish(diff_list_yaml_1) == expected_result_1
-    assert get_stylish(diff_list_json_2) == expected_result_2
-    assert get_stylish(diff_list_yaml_2) == expected_result_2
-    assert get_plain(diff_list_json_1) == expected_plain_result_1
-    assert get_plain(diff_list_yaml_1) == expected_plain_result_1
-    assert get_plain(diff_list_json_2) == expected_plain_result_2
-    assert get_plain(diff_list_yaml_2) == expected_plain_result_2
+@pytest.mark.parametrize("test_input, expected",
+                        [(diff_list_json_1, expected_result_1),
+                         (diff_list_yaml_1, expected_result_1),
+                         (diff_list_json_2, expected_result_2),
+                         (diff_list_yaml_2, expected_result_2),
+                        ])
+def test_get_stylish(test_input, expected):
+    assert get_stylish(test_input) == expected
+
+
+@pytest.mark.parametrize("test_input, expected",
+                        [(diff_list_json_1, expected_plain_result_1),
+                         (diff_list_yaml_1, expected_plain_result_1),
+                         (diff_list_json_2, expected_plain_result_2),
+                         (diff_list_yaml_2, expected_plain_result_2),
+                         ])
+def test_get_plain(test_input, expected):
+    assert get_plain(test_input) == expected
