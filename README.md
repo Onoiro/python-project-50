@@ -30,7 +30,7 @@ To uninstall Detection of Differences:
 
     python3 -m pip uninstall hexlet-code
 
-To run and look how to use Detection of Differences:
+To run and use Detection of Differences:
 
     gendiff [-h] [-f FORMAT] filepath1 filepath2
 

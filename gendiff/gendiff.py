@@ -1,6 +1,5 @@
 from gendiff.get_diff import get_diffs
 from gendiff.file_reader import get_data
-# from gendiff.file_parser import get_dict
 from gendiff.formatters.stylish import get_stylish
 from gendiff.formatters.plain import get_plain
 from gendiff.formatters.json import get_json_format
