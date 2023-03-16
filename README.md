@@ -1,13 +1,10 @@
-#### Hexlet tests and linter status:
+## Welcome to the "Detection of Differences"
+
 [![Actions Status](https://github.com/Onoiro/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/Onoiro/python-project-50/actions)
-
 ![gendiff workflow](https://github.com/Onoiro/python-project-50/actions/workflows/gendiff-check.yml/badge.svg)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/705776fbe38db666259d/maintainability)](https://codeclimate.com/github/Onoiro/python-project-50/maintainability)
-
 [![Test Coverage](https://api.codeclimate.com/v1/badges/705776fbe38db666259d/test_coverage)](https://codeclimate.com/github/Onoiro/python-project-50/test_coverage)
 
-## Welcome to the "Detection of Differences"
 This CLI utility allows you to compare two *.json or *.yaml files and show the difference.
 Such system is used, for example, when outputting tests or when automatically tracking changes in configuration files.
 
