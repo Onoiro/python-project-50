@@ -3,9 +3,9 @@ import yaml
 from yaml.loader import SafeLoader
 
 
-def get_dict(obj, extention):
+def get_object(obj, extention):
     if extention == 'json':
-        result_dict = json.loads(obj)
+        result = json.loads(obj)
     else:
-        result_dict = yaml.load(obj, Loader=SafeLoader)
-    return result_dict
+        result = yaml.load(obj, Loader=SafeLoader)
+    return result
