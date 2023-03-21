@@ -25,7 +25,7 @@ def get_stylish(diff_list, level=0):
 
 
 def format_data(data, indent):
-    if type(data) is dict:
+    if isinstance(data, dict):
         indent += '    '
         formatted_data = '{\n'
         for key in data.keys():
