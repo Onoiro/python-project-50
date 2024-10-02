@@ -18,10 +18,7 @@ Minimal system requirements:
 To install Detection of Differences:
 
     git clone https://github.com/Onoiro/python-project-50.git
-    poetry install
-    make build
-    make publish
-    make package-install
+    make install
 
 To uninstall Detection of Differences:
 
