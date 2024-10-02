@@ -17,7 +17,7 @@ Minimal system requirements:
 
 To install Detection of Differences:
 
-    git clone git@github.com:Onoiro/python-project-50.git
+    git clone https://github.com/Onoiro/python-project-50.git
     poetry install
     make build
     make publish
@@ -25,7 +25,7 @@ To install Detection of Differences:
 
 To uninstall Detection of Differences:
 
-    python3 -m pip uninstall hexlet-code
+    make uninstall
 
 To run and use Detection of Differences:
 
